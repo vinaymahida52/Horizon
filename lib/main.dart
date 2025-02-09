@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:horizon/core/config/router/app_router.dart';
+import 'package:horizon/core/config/theme/k_theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,10 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Horizon',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: KTheme.lightTheme,
+      debugShowCheckedModeBanner: false,
       routerConfig: route.config(),
     );
   }
