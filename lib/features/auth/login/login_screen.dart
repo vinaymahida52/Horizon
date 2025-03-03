@@ -5,8 +5,7 @@ import 'package:horizon/core/extension/context_ext.dart';
 import 'package:horizon/core/extension/num_extension.dart';
 import 'package:horizon/core/mixin/validator_mixin.dart';
 import 'package:horizon/core/shared/widgets/appbar/common_appbar.dart';
-import 'package:horizon/core/shared/widgets/button/common_button.dart';
-import 'package:horizon/core/shared/widgets/textfield/common_textfield.dart';
+import 'package:horizon/features/auth/login/employee_screen.dart';
 
 @RoutePage()
 class LoginScreen extends StatefulWidget {
@@ -128,39 +127,7 @@ class _LoginScreenState extends State<LoginScreen>
                     child: TabBarView(
                       controller: _tabController,
                       children: [
-                        Form(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              CommonTextField(
-                                hintText: 'Email',
-                                controller: emailController,
-                                keyboardType: TextInputType.emailAddress,
-                                validator: isValidEmail,
-                              ),
-                              16.hBox,
-                              CommonTextField(
-                                hintText: 'Password',
-                                controller: passwordController,
-                                obscureText: true,
-                                changeObsecure: isHidden,
-                              ),
-                              16.hBox,
-                              CommonButton.buildElevatedButton(
-                                  onPressed: () {
-                                    
-                                  },
-                                  text: 'Login'),
-                              16.hBox,
-                              CommonButton.buildElevatedButton(
-                                  onPressed: () {}, text: 'Sign Up'),
-                            ],
-                          ),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [],
-                        ),
+                        EmployeeScreen(),
                       ],
                     ),
                   ),
@@ -171,11 +138,5 @@ class _LoginScreenState extends State<LoginScreen>
         ),
       ),
     );
-  }
-
-  void isHidden() {
-    setState(() {
-      isEmployee = !isEmployee;
-    });
   }
 }
