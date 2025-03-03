@@ -4,6 +4,10 @@
 class R {
   const R._();
 
+  /// ![preview](file:///Users/mohit/flutter_projects/side_hustle/horizon/assets/image/jpg/horizon.jpg)
+  static const String ASSETS_IMAGE_JPG_HORIZON_JPG =
+      'assets/image/jpg/horizon.jpg';
+
   /// ![preview](file:///Users/mohit/flutter_projects/side_hustle/horizon/assets/image/png/logo.png)
   static const String ASSETS_IMAGE_PNG_LOGO_PNG = 'assets/image/png/logo.png';
 

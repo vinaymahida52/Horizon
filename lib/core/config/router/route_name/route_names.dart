@@ -1,4 +1,4 @@
-class RouteNames {
+class Routes {
   static const String splash = "/splash";
   static const String login = "/login";
 }
