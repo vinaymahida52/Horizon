@@ -6,6 +6,7 @@ import 'package:horizon/core/extension/num_extension.dart';
 import 'package:horizon/core/mixin/validator_mixin.dart';
 import 'package:horizon/core/shared/widgets/appbar/common_appbar.dart';
 import 'package:horizon/features/auth/login/employee_screen.dart';
+import 'package:horizon/features/auth/login/manager_screen.dart';
 
 @RoutePage()
 class LoginScreen extends StatefulWidget {
@@ -126,9 +127,7 @@ class _LoginScreenState extends State<LoginScreen>
                     height: context.h * 0.4,
                     child: TabBarView(
                       controller: _tabController,
-                      children: [
-                        EmployeeScreen(),
-                      ],
+                      children: [EmployeeLoginScreen(), ManagerLoginScreen()],
                     ),
                   ),
                 ],

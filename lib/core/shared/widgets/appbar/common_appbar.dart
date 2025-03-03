@@ -7,11 +7,15 @@ import 'package:horizon/core/extension/context_ext.dart';
 import 'package:horizon/core/extension/num_extension.dart';
 
 class CommonAppbar extends ConsumerWidget implements PreferredSizeWidget {
-  const CommonAppbar({
+  CommonAppbar({
     super.key,
     this.height = kToolbarHeight,
+    this.actions = const [],
+    this.centerTitle = true,
   });
   final double height;
+  List<Widget> actions;
+  bool centerTitle;
 
   @override
   Widget build(BuildContext context, ref) {
@@ -20,7 +24,7 @@ class CommonAppbar extends ConsumerWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: 50,
       toolbarHeight: height,
-      centerTitle: true,
+      centerTitle: centerTitle,
       surfaceTintColor: ColorPalette.whiteColor,
       backgroundColor: ColorPalette.whiteColor,
       title: Row(
@@ -33,13 +37,17 @@ class CommonAppbar extends ConsumerWidget implements PreferredSizeWidget {
         ],
       ),
       actions: [
-        // moon icon
         IconButton(
-          icon: Icon(Icons.nightlight_round),
+          icon: Icon(
+            Icons.nightlight_round,
+            color: ColorPalette.blackColor,
+          ),
           onPressed: () {
             theme.changeTheme();
           },
         ),
+        // moon icon
+        ...actions,
       ],
     );
   }

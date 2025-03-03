@@ -51,7 +51,7 @@ class KTheme extends ChangeNotifier {
   AppBarTheme get appBarTheme => AppBarTheme(
         backgroundColor: ColorPalette.whiteColor,
         elevation: 0,
-        iconTheme: IconThemeData(color: ColorPalette.blackColor),
+        iconTheme: kIconTheme(),
       );
 
   ThemeData get darkTheme => ThemeData.dark().copyWith(
@@ -59,12 +59,15 @@ class KTheme extends ChangeNotifier {
           primarySwatch: Colors.deepPurple,
           accentColor: ColorPalette.primaryColor,
         ),
+        iconTheme: kIconTheme(),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: commonButtonStyle,
         ),
         appBarTheme: appBarTheme,
         textTheme: commonTextTheme(color: ColorPalette.whiteColor),
       );
+
+  IconThemeData kIconTheme() => IconThemeData(color: ColorPalette.primaryColor);
 
   ThemeData get lightTheme => ThemeData.light().copyWith(
         scaffoldBackgroundColor: ColorPalette.whiteColor,

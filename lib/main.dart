@@ -1,10 +1,12 @@
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:horizon/core/config/router/app_router.dart';
 import 'package:horizon/core/config/theme/k_theme.dart';
 
 void main() {
+  setUrlStrategy(PathUrlStrategy());
   runApp(ProviderScope(child: MyApp()));
 }
 

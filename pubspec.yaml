@@ -40,6 +40,8 @@ dependencies:
   pretty_http_logger: ^1.0.4
   retry: ^3.1.2
   shared_preferences: ^2.5.1
+  flutter_expandable_fab: ^2.3.0
+  expandable_fab_menu: ^0.0.1
 
 dev_dependencies:
   auto_route_generator: ^9.0.0
@@ -47,6 +49,7 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

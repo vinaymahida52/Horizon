@@ -11,5 +11,7 @@ class AppRouter extends RootStackRouter {
   List<AutoRoute> get routes => [
         AutoRoute(page: SplashRoute.page, path: Routes.splash, initial: true),
         AutoRoute(page: LoginRoute.page, path: Routes.login),
+        AutoRoute(
+            page: ManagerDashboardRoute.page, path: Routes.managerDashboard),
       ];
 }

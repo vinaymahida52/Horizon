@@ -4,14 +4,15 @@ import 'package:horizon/core/mixin/validator_mixin.dart';
 import 'package:horizon/core/shared/widgets/button/common_button.dart';
 import 'package:horizon/core/shared/widgets/textfield/common_textfield.dart';
 
-class EmployeeScreen extends StatefulWidget {
-  const EmployeeScreen({super.key});
+class EmployeeLoginScreen extends StatefulWidget {
+  const EmployeeLoginScreen({super.key});
 
   @override
-  State<EmployeeScreen> createState() => _EmployeeScreenState();
+  State<EmployeeLoginScreen> createState() => _EmployeeLoginScreenState();
 }
 
-class _EmployeeScreenState extends State<EmployeeScreen> with ValidatorMixin {
+class _EmployeeLoginScreenState extends State<EmployeeLoginScreen>
+    with ValidatorMixin {
   @override
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();

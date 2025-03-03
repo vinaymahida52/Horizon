@@ -14,4 +14,5 @@ class ColorPalette {
   static const Color blackColor = Color(0xFF000000);
   static const Color greyColor = Color(0xFF9E9E9E);
   static const Color disabledPrimaryColor = Color(0xFFD1C4E9);
+  static const Color disabledSecondaryColor = Color(0xFFCFC0BB);
 }
