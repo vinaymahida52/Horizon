@@ -91,9 +91,11 @@ class _LoginScreenState extends State<LoginScreen>
                         unselectedLabelColor: ColorPalette.blackColor,
                         labelStyle: context.bodyMedium
                             .copyWith(fontWeight: FontWeight.bold),
-                        unselectedLabelStyle: context.bodyMedium,
+                        unselectedLabelStyle: context.bodyMedium.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
                         indicator: BoxDecoration(
-                          color: const Color(0xFF7C4DFF),
+                          color: ColorPalette.primaryLightColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         indicatorSize: TabBarIndicatorSize.tab,
@@ -112,11 +114,7 @@ class _LoginScreenState extends State<LoginScreen>
                           Tab(
                             child: Text(
                               'Manager',
-                              style: TextStyle(
-                                color: isEmployee
-                                    ? Colors.grey[800]
-                                    : Colors.white,
-                              ),
+                              style: TextStyle(),
                             ),
                           ),
                         ],

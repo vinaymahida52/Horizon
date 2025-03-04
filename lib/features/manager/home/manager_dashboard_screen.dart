@@ -4,6 +4,7 @@ import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:horizon/core/config/theme/color_palette.dart';
 import 'package:horizon/core/extension/context_ext.dart';
 import 'package:horizon/core/shared/widgets/appbar/common_appbar.dart';
+import 'package:horizon/features/manager/home/children/dashboard_child.dart';
 import 'package:horizon/features/manager/home/nav_model/nav_mdoel.dart';
 
 @RoutePage()
@@ -17,7 +18,7 @@ class ManagerDashboardScreen extends StatefulWidget {
 int selectedIndex = 0;
 
 List<Widget> childrenItems = [
-  Center(child: Text('Home')),
+  DashboardChild(),
   Center(child: Text('My Tasks')),
   Center(child: Text('Inbox')),
   Center(child: Text('Leaderboard')),
@@ -36,6 +37,7 @@ class _ManagerDashboardScreenState extends State<ManagerDashboardScreen> {
     return Scaffold(
       appBar: CommonAppbar(
         centerTitle: false,
+        elevation: 100,
         actions: [
           IconButton(
             onPressed: () {},
@@ -51,7 +53,7 @@ class _ManagerDashboardScreenState extends State<ManagerDashboardScreen> {
         children: [
           SizedBox(
             height: context.h,
-            width: 300,
+            width: 270,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -91,28 +93,32 @@ class _ManagerDashboardScreenState extends State<ManagerDashboardScreen> {
       ),
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: ExpandableFab(
-        distance: 60,
+        distance: 65,
         initialOpen: true,
         childrenAnimation: ExpandableFabAnimation.rotate,
         type: ExpandableFabType.up,
         pos: ExpandableFabPos.left,
         children: [
           FloatingActionButton.extended(
+            backgroundColor: ColorPalette.primaryColor,
             heroTag: 'fab',
             onPressed: () {},
             label: const Text('New Employee'),
           ),
           FloatingActionButton.extended(
+            backgroundColor: ColorPalette.primaryColor,
             heroTag: 'fab1',
             onPressed: () {},
             label: const Text('New Department'),
           ),
           FloatingActionButton.extended(
+            backgroundColor: ColorPalette.primaryColor,
             heroTag: 'fab2',
             onPressed: () {},
             label: const Text('New Task'),
           ),
           FloatingActionButton.extended(
+            backgroundColor: ColorPalette.primaryColor,
             heroTag: 'fab2',
             onPressed: () {},
             label: const Text('New Project'),

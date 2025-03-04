@@ -12,17 +12,19 @@ class CommonAppbar extends ConsumerWidget implements PreferredSizeWidget {
     this.height = kToolbarHeight,
     this.actions = const [],
     this.centerTitle = true,
+    this.elevation = 50,
   });
   final double height;
   List<Widget> actions;
   bool centerTitle;
+  double elevation;
 
   @override
   Widget build(BuildContext context, ref) {
     final theme = ref.watch(themeProvider);
 
     return AppBar(
-      elevation: 50,
+      elevation: elevation,
       toolbarHeight: height,
       centerTitle: centerTitle,
       surfaceTintColor: ColorPalette.whiteColor,
