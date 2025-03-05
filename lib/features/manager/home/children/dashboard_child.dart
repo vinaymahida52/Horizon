@@ -76,6 +76,80 @@ class _DashboardChildState extends State<DashboardChild> {
                 completedCount: 50,
               ),
             ],
+          ),
+          20.hBox,
+          Row(
+            spacing: 20,
+            children: [
+              Container(
+                  width: 700,
+                  height: 400,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Placeholder()),
+              Column(
+                spacing: 10,
+                children: [
+                  Container(
+                    width: 300,
+                    height: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.grey),
+                    ),
+                    padding: AppPadding.small,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        spacing: 10,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Projects',
+                            style: context.bodyMedium.copyWith(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          ...List.generate(10, (index) {
+                            return Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      'Project ',
+                                      style: context.bodyMedium,
+                                    ),
+                                    Text(
+                                      '$index %',
+                                      style: context.bodyMedium,
+                                    ),
+                                  ],
+                                ),
+                                Divider(
+                                  thickness: 1,
+                                  height: 1,
+                                  color: Colors.grey,
+                                ),
+                              ],
+                            );
+                          }),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 300,
+                    height: 200,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Placeholder(),
+                  ),
+                ],
+              )
+            ],
           )
         ],
       ),
