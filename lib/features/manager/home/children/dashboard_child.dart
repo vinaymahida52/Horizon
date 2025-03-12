@@ -55,6 +55,7 @@ class _DashboardChildState extends State<DashboardChild> {
             spacing: 20,
             children: [
               DashCard2(
+                onTap: () {},
                 text1: 'Active employee',
                 icon: Icons.task,
                 text2: 'Current workforce status',
@@ -62,6 +63,7 @@ class _DashboardChildState extends State<DashboardChild> {
                 completedCount: 50,
               ),
               DashCard2(
+                onTap: () {},
                 text1: 'Task complete',
                 icon: Icons.task,
                 text2: 'Monthly Project',
@@ -69,6 +71,7 @@ class _DashboardChildState extends State<DashboardChild> {
                 completedCount: 50,
               ),
               DashCard2(
+                onTap: () {},
                 text1: 'Project on Track',
                 icon: Icons.task,
                 text2: 'Delivery Status',
@@ -78,78 +81,77 @@ class _DashboardChildState extends State<DashboardChild> {
             ],
           ),
           20.hBox,
-          Row(
-            spacing: 20,
-            children: [
-              Container(
-                  width: 700,
-                  height: 400,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Placeholder()),
-              Column(
+          SizedBox(
+            width: context.w * 0.75,
+            height: 500,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
                 spacing: 10,
                 children: [
-                  Container(
-                    width: 300,
-                    height: 200,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.grey),
+                  Expanded(
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Placeholder(),
                     ),
-                    padding: AppPadding.small,
-                    child: SingleChildScrollView(
-                      child: Column(
-                        spacing: 10,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Projects',
-                            style: context.bodyMedium.copyWith(
-                              fontWeight: FontWeight.bold,
+                  ),
+                  Expanded(
+                    child: Column(
+                      spacing: 20,
+                      children: [
+                        Expanded(
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.grey),
+                            ),
+                            child: Padding(
+                              padding: AppPadding.small,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Projects',
+                                    style: context.bodyMedium.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  10.hBox,
+                                  Expanded(
+                                    child: ListView.separated(
+                                      itemCount: 10,
+                                      separatorBuilder: (_, __) =>
+                                          const Divider(
+                                        thickness: 1,
+                                        height: 1,
+                                        color: Colors.grey,
+                                      ),
+                                      itemBuilder: (_, index) => Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text('Project ',
+                                              style: context.bodyMedium),
+                                          Text('$index %',
+                                              style: context.bodyMedium),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                          ...List.generate(10, (index) {
-                            return Column(
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Project ',
-                                      style: context.bodyMedium,
-                                    ),
-                                    Text(
-                                      '$index %',
-                                      style: context.bodyMedium,
-                                    ),
-                                  ],
-                                ),
-                                Divider(
-                                  thickness: 1,
-                                  height: 1,
-                                  color: Colors.grey,
-                                ),
-                              ],
-                            );
-                          }),
-                        ],
-                      ),
+                        ),
+                        const Expanded(child: Placeholder()),
+                      ],
                     ),
-                  ),
-                  Container(
-                    width: 300,
-                    height: 200,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Placeholder(),
-                  ),
+                  )
                 ],
-              )
-            ],
+              ),
+            ),
           )
         ],
       ),

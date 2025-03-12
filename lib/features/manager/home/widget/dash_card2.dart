@@ -12,12 +12,14 @@ class DashCard2 extends StatelessWidget {
     required this.text2,
     required this.totalCount,
     required this.completedCount,
+    required this.onTap,
   });
   final String text1;
   final IconData icon;
   final String text2;
   final int totalCount;
   final int completedCount;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,13 +37,15 @@ class DashCard2 extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            text1,
-            style: context.bodyMedium.copyWith(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          TextButton(
+              onPressed: onTap,
+              child: Text(
+                text1,
+                style: context.bodyMedium.copyWith(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              )),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

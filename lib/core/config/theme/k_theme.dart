@@ -59,6 +59,7 @@ class KTheme extends ChangeNotifier {
           primarySwatch: Colors.deepPurple,
           accentColor: ColorPalette.primaryColor,
         ),
+        tabBarTheme: kTabBarTheme(),
         iconTheme: kIconTheme(),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: commonButtonStyle,
@@ -66,6 +67,19 @@ class KTheme extends ChangeNotifier {
         appBarTheme: appBarTheme,
         textTheme: commonTextTheme(color: ColorPalette.whiteColor),
       );
+
+  TabBarTheme kTabBarTheme() {
+    return TabBarTheme(
+      dividerColor: ColorPalette.dividerColor,
+      indicator: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: ColorPalette.primaryColor,
+      ),
+      labelColor: ColorPalette.whiteColor,
+      unselectedLabelColor: ColorPalette.blackColor,
+      indicatorSize: TabBarIndicatorSize.tab,
+    );
+  }
 
   IconThemeData kIconTheme() => IconThemeData(color: ColorPalette.primaryColor);
 
@@ -75,6 +89,7 @@ class KTheme extends ChangeNotifier {
           primarySwatch: Colors.deepPurple,
           accentColor: ColorPalette.primaryColor,
         ),
+        tabBarTheme: kTabBarTheme(),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: commonButtonStyle,
         ),

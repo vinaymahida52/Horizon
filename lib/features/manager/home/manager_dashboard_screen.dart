@@ -6,6 +6,9 @@ import 'package:horizon/core/extension/context_ext.dart';
 import 'package:horizon/core/shared/widgets/appbar/common_appbar.dart';
 import 'package:horizon/features/manager/home/children/dashboard_child.dart';
 import 'package:horizon/features/manager/home/nav_model/nav_mdoel.dart';
+import 'package:horizon/features/manager/home/widget/popup/create_department.dart';
+import 'package:horizon/features/manager/home/widget/popup/create_employee.dart';
+import 'package:horizon/features/manager/home/widget/popup/k_create_task_popup.dart';
 
 @RoutePage()
 class ManagerDashboardScreen extends StatefulWidget {
@@ -102,19 +105,37 @@ class _ManagerDashboardScreenState extends State<ManagerDashboardScreen> {
           FloatingActionButton.extended(
             backgroundColor: ColorPalette.primaryColor,
             heroTag: 'fab',
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return Dialog(child: CreateEmployee());
+                  });
+            },
             label: const Text('New Employee'),
           ),
           FloatingActionButton.extended(
             backgroundColor: ColorPalette.primaryColor,
             heroTag: 'fab1',
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return Dialog(child: CreateDepartment());
+                  });
+            },
             label: const Text('New Department'),
           ),
           FloatingActionButton.extended(
             backgroundColor: ColorPalette.primaryColor,
             heroTag: 'fab2',
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return Dialog(child: KCreateTaskPopup());
+                  });
+            },
             label: const Text('New Task'),
           ),
           FloatingActionButton.extended(

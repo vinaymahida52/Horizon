@@ -26,6 +26,7 @@ class CommonTextField extends StatelessWidget {
     this.obscureText,
     this.errorWidget,
     this.labelText,
+    this.minLines,
     this.changeObsecure,
   }) : assert(obscureText != null ? changeObsecure != null : true);
   final String hintText;
@@ -46,6 +47,7 @@ class CommonTextField extends StatelessWidget {
   bool? obscureText;
   String? labelText;
   final bool isLabel;
+  int? minLines;
   VoidCallback? changeObsecure;
 
   @override
@@ -68,6 +70,7 @@ class CommonTextField extends StatelessWidget {
       cursorErrorColor: Colors.red,
       obscureText: obscureText ?? false,
       obscuringCharacter: "*",
+      minLines: minLines,
       decoration: InputDecoration(
         hintStyle: context.bodyMedium.copyWith(
           fontSize: 14,
@@ -87,6 +90,7 @@ class CommonTextField extends StatelessWidget {
             width: 1,
           ),
         ),
+
         filled: true,
         isDense: true,
         fillColor: ColorPalette.whiteColor,
