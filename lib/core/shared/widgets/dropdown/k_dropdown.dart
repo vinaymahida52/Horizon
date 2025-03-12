@@ -29,14 +29,14 @@ class CommonDropDown extends StatelessWidget {
           icon: const Icon(Icons.keyboard_arrow_down),
           decoration: InputDecoration(
             border: OutlineInputBorder(
-              borderSide: const BorderSide(color: ColorPalette.greyColor),
+              borderSide: BorderSide(color: ColorPalette.greyColor),
               borderRadius: BorderRadius.circular(10),
             ),
             disabledBorder: OutlineInputBorder(
-                borderSide: const BorderSide(color: ColorPalette.greyColor),
+                borderSide: BorderSide(color: ColorPalette.greyColor),
                 borderRadius: BorderRadius.circular(10)),
             enabledBorder: OutlineInputBorder(
-                borderSide: const BorderSide(color: ColorPalette.greyColor),
+                borderSide: BorderSide(color: ColorPalette.greyColor),
                 borderRadius: BorderRadius.circular(10)),
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 10, vertical: 10),

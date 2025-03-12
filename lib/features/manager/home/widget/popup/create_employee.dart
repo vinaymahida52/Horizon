@@ -5,6 +5,7 @@ import 'package:horizon/core/shared/widgets/button/common_button.dart';
 import 'package:horizon/core/shared/widgets/dropdown/k_dropdown.dart';
 import 'package:horizon/core/shared/widgets/textfield/common_textfield.dart';
 import 'package:horizon/core/shared/widgets/upload/upload_widget.dart';
+import 'package:horizon/features/manager/home/widget/popup/k_create_task_popup.dart';
 
 class CreateEmployee extends StatefulWidget {
   const CreateEmployee({super.key});
@@ -85,17 +86,8 @@ class _CreateEmployeeState extends State<CreateEmployee>
               )
             ],
           ),
-          TabBar(
-            controller: tabController1,
-            tabs: [
-              Tab(
-                text: 'Manually',
-              ),
-              Tab(
-                text: 'CSV',
-              ),
-            ],
-          ),
+          CommonTab(
+              tabController1: tabController1, tabList: ['Manually', 'CSV']),
           Expanded(
             // height: 700,
             child: TabBarView(controller: tabController1, children: [

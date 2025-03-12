@@ -1,6 +1,8 @@
+import 'package:animated_segmented_tab_control/animated_segmented_tab_control.dart';
 import 'package:date_time_picker_plus/date_time_picker.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
+import 'package:horizon/core/config/theme/color_palette.dart';
 import 'package:horizon/core/extension/context_ext.dart';
 import 'package:horizon/core/shared/widgets/button/common_button.dart';
 import 'package:horizon/core/shared/widgets/dropdown/k_dropdown.dart';
@@ -102,18 +104,22 @@ class _KCreateTaskPopupState extends State<KCreateTaskPopup>
               ),
             ],
           ),
-          TabBar(
-            indicatorSize: TabBarIndicatorSize.tab,
-            controller: tabController1,
-            tabs: [
-              Tab(
-                text: 'Regular Task',
-              ),
-              Tab(
-                text: 'Add to Project',
-              ),
-            ],
-          ),
+          // TabBar(
+          //   indicatorSize: TabBarIndicatorSize.tab,
+          //   controller: tabController1,
+          //   tabs: [
+          //     Tab(
+          //       text: 'Regular Task',
+          //     ),
+          //     Tab(
+          //       text: 'Add to Project',
+          //     ),
+          //   ],
+          // ),
+
+          CommonTab(
+              tabController1: tabController1,
+              tabList: ['Regular Task', 'Add to Project']),
           Expanded(
             child: TabBarView(controller: tabController1, children: [
               SingleChildScrollView(
@@ -268,6 +274,32 @@ class _KCreateTaskPopupState extends State<KCreateTaskPopup>
           ),
         ],
       ),
+    );
+  }
+}
+
+class CommonTab extends StatelessWidget {
+  const CommonTab({
+    super.key,
+    required this.tabController1,
+    required this.tabList,
+  });
+  final List<String> tabList;
+  final TabController tabController1;
+
+  @override
+  Widget build(BuildContext context) {
+    return SegmentedTabControl(
+      tabTextColor: ColorPalette.blackColor,
+      controller: tabController1,
+      tabs: tabList
+          .map(
+            (e) => SegmentTab(
+                backgroundColor: ColorPalette.greyColor.withAlpha(50),
+                color: ColorPalette.primaryColor,
+                label: e),
+          )
+          .toList(),
     );
   }
 }
