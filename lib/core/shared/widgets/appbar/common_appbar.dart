@@ -13,11 +13,13 @@ class CommonAppbar extends ConsumerWidget implements PreferredSizeWidget {
     this.actions = const [],
     this.centerTitle = true,
     this.elevation = 50,
+    this.isLeading = false,
   });
   final double height;
   List<Widget> actions;
   bool centerTitle;
   double elevation;
+  bool isLeading;
 
   @override
   Widget build(BuildContext context, ref) {
@@ -29,9 +31,22 @@ class CommonAppbar extends ConsumerWidget implements PreferredSizeWidget {
       centerTitle: centerTitle,
       surfaceTintColor: ColorPalette.whiteColor,
       backgroundColor: ColorPalette.whiteColor,
+      leading: SizedBox.shrink(),
       title: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
+          // if (isLeading)
+          //   IconButton(
+          //     style: ButtonStyle(
+          //       padding: WidgetStateProperty.all(EdgeInsets.zero),
+          //     ),
+          //     onPressed: () {
+          //       Navigator.pop(context);
+          //     },
+          //     icon: Icon(Icons.arrow_back_ios_new_outlined,
+          //         color: ColorPalette.blackColor),
+          //   ),
+          10.wBox,
           Text('Horizon',
               style: context.bodyMedium, textAlign: TextAlign.center),
           10.wBox,

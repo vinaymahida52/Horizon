@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:horizon/core/config/router/route_name/route_names.dart';
 import 'package:horizon/core/constraints/common_padding.dart';
 import 'package:horizon/core/extension/context_ext.dart';
 import 'package:horizon/core/extension/num_extension.dart';
@@ -35,6 +37,9 @@ class _DashboardChildState extends State<DashboardChild> {
                 count: 100,
                 icon: Icons.people,
                 text2: 'View all projects',
+                onTap: () {
+                  context.router.pushNamed(Routes.viewProjects);
+                },
               ),
               DashCard1(
                 text1: 'Message',

@@ -8,6 +8,7 @@ import 'package:horizon/features/manager/home/children/dashboard_child.dart';
 import 'package:horizon/features/manager/home/nav_model/nav_mdoel.dart';
 import 'package:horizon/features/manager/home/widget/popup/create_department.dart';
 import 'package:horizon/features/manager/home/widget/popup/create_employee.dart';
+import 'package:horizon/features/manager/home/widget/popup/create_project_popup.dart';
 import 'package:horizon/features/manager/home/widget/popup/k_create_task_popup.dart';
 
 @RoutePage()
@@ -22,7 +23,7 @@ int selectedIndex = 0;
 
 List<Widget> childrenItems = [
   DashboardChild(),
-  Center(child: Text('My Tasks')),
+  Center(child: Text('Tasks')),
   Center(child: Text('Inbox')),
   Center(child: Text('Leaderboard')),
   Center(child: Text('Calendar')),
@@ -41,6 +42,7 @@ class _ManagerDashboardScreenState extends State<ManagerDashboardScreen> {
       appBar: CommonAppbar(
         centerTitle: false,
         elevation: 100,
+        isLeading: true,
         actions: [
           IconButton(
             onPressed: () {},
@@ -141,7 +143,13 @@ class _ManagerDashboardScreenState extends State<ManagerDashboardScreen> {
           FloatingActionButton.extended(
             backgroundColor: ColorPalette.primaryColor,
             heroTag: 'fab2',
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (context) {
+                    return Dialog(child: CreateProject());
+                  });
+            },
             label: const Text('New Project'),
           ),
         ],

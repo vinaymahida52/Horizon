@@ -11,11 +11,13 @@ class DashCard1 extends StatelessWidget {
     required this.icon,
     required this.text2,
     required this.count,
+    this.onTap,
   });
   final String text1;
   final IconData icon;
   final String text2;
   final int count;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +64,16 @@ class DashCard1 extends StatelessWidget {
             ],
           ),
           20.hBox,
-          Text(
-            text2,
-            style: context.bodyMedium.copyWith(
-              color: ColorPalette.primaryPink,
+          TextButton(
+            style: TextButton.styleFrom(
+              padding: EdgeInsets.zero,
+            ),
+            onPressed: onTap,
+            child: Text(
+              text2,
+              style: context.bodyMedium.copyWith(
+                color: ColorPalette.primaryPink,
+              ),
             ),
           )
         ],
