@@ -31,7 +31,6 @@ class CommonAppbar extends ConsumerWidget implements PreferredSizeWidget {
       centerTitle: centerTitle,
       surfaceTintColor: ColorPalette.whiteColor,
       backgroundColor: ColorPalette.whiteColor,
-      leading: SizedBox.shrink(),
       title: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

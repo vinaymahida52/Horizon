@@ -17,5 +17,9 @@ class AppRouter extends RootStackRouter {
           page: ProjectListRoute.page,
           path: Routes.viewProjects,
         ),
+        AutoRoute(
+          page: ProjectDetailRoute.page,
+          path: Routes.projectDetails,
+        ),
       ];
 }

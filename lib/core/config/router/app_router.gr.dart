@@ -9,22 +9,24 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i5;
+import 'package:auto_route/auto_route.dart' as _i6;
 import 'package:horizon/features/auth/login/login_screen.dart' as _i1;
 import 'package:horizon/features/manager/home/manager_dashboard_screen.dart'
     as _i2;
-import 'package:horizon/features/project/project_list_screen.dart' as _i3;
-import 'package:horizon/features/spalsh/screen/splash_screen.dart' as _i4;
+import 'package:horizon/features/project/view/project_detail_screen.dart'
+    as _i3;
+import 'package:horizon/features/project/view/project_list_screen.dart' as _i4;
+import 'package:horizon/features/spalsh/screen/splash_screen.dart' as _i5;
 
 /// generated route for
 /// [_i1.LoginScreen]
-class LoginRoute extends _i5.PageRouteInfo<void> {
-  const LoginRoute({List<_i5.PageRouteInfo>? children})
+class LoginRoute extends _i6.PageRouteInfo<void> {
+  const LoginRoute({List<_i6.PageRouteInfo>? children})
     : super(LoginRoute.name, initialChildren: children);
 
   static const String name = 'LoginRoute';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
       return const _i1.LoginScreen();
@@ -34,13 +36,13 @@ class LoginRoute extends _i5.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.ManagerDashboardScreen]
-class ManagerDashboardRoute extends _i5.PageRouteInfo<void> {
-  const ManagerDashboardRoute({List<_i5.PageRouteInfo>? children})
+class ManagerDashboardRoute extends _i6.PageRouteInfo<void> {
+  const ManagerDashboardRoute({List<_i6.PageRouteInfo>? children})
     : super(ManagerDashboardRoute.name, initialChildren: children);
 
   static const String name = 'ManagerDashboardRoute';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
       return const _i2.ManagerDashboardScreen();
@@ -49,33 +51,49 @@ class ManagerDashboardRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.ProjectListScreen]
-class ProjectListRoute extends _i5.PageRouteInfo<void> {
-  const ProjectListRoute({List<_i5.PageRouteInfo>? children})
-    : super(ProjectListRoute.name, initialChildren: children);
+/// [_i3.ProjectDetailScreen]
+class ProjectDetailRoute extends _i6.PageRouteInfo<void> {
+  const ProjectDetailRoute({List<_i6.PageRouteInfo>? children})
+    : super(ProjectDetailRoute.name, initialChildren: children);
 
-  static const String name = 'ProjectListRoute';
+  static const String name = 'ProjectDetailRoute';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
-      return const _i3.ProjectListScreen();
+      return const _i3.ProjectDetailScreen();
     },
   );
 }
 
 /// generated route for
-/// [_i4.SplashScreen]
-class SplashRoute extends _i5.PageRouteInfo<void> {
-  const SplashRoute({List<_i5.PageRouteInfo>? children})
+/// [_i4.ProjectListScreen]
+class ProjectListRoute extends _i6.PageRouteInfo<void> {
+  const ProjectListRoute({List<_i6.PageRouteInfo>? children})
+    : super(ProjectListRoute.name, initialChildren: children);
+
+  static const String name = 'ProjectListRoute';
+
+  static _i6.PageInfo page = _i6.PageInfo(
+    name,
+    builder: (data) {
+      return const _i4.ProjectListScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [_i5.SplashScreen]
+class SplashRoute extends _i6.PageRouteInfo<void> {
+  const SplashRoute({List<_i6.PageRouteInfo>? children})
     : super(SplashRoute.name, initialChildren: children);
 
   static const String name = 'SplashRoute';
 
-  static _i5.PageInfo page = _i5.PageInfo(
+  static _i6.PageInfo page = _i6.PageInfo(
     name,
     builder: (data) {
-      return const _i4.SplashScreen();
+      return const _i5.SplashScreen();
     },
   );
 }

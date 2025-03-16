@@ -4,4 +4,5 @@ class Routes {
   static const String managerDashboard = "/manager_dashboard";
   static const String employeeDashboard = "/employee_dashboard";
   static const String viewProjects = "/view_projects";
+  static const String projectDetails = "/project_details";
 }
