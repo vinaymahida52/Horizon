@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:horizon/core/config/router/app_router.dart';
+import 'package:horizon/core/config/router/observer/print_route_observer.dart';
 import 'package:horizon/core/config/theme/k_theme.dart';
 import 'package:horizon/core/observers/riverpod_observer.dart';
 
@@ -28,7 +29,9 @@ class MyApp extends ConsumerWidget {
           title: 'Horizon',
           theme: theme,
           debugShowCheckedModeBanner: false,
-          routerConfig: route.config(),
+          routerConfig: route.config(
+            navigatorObservers: () => [PrintRouteObserver()],
+          ),
         );
       },
     );

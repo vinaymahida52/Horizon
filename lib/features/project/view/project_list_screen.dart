@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:horizon/core/config/router/app_router.gr.dart';
 import 'package:horizon/core/extension/context_ext.dart';
 import 'package:horizon/core/shared/constraints/common_padding.dart';
 import 'package:horizon/core/shared/widgets/appbar/common_appbar.dart';
@@ -45,7 +46,11 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
                 SizedBox(
                   width: context.w * 0.5,
                   child: CommonButton.buildElevatedButton(
-                      onPressed: () {}, text: 'Create Project'),
+                      onPressed: () {
+                        // final interopService = JsInteropService();
+                        // interopService.showAlert('Hello world');
+                      },
+                      text: 'Create Project'),
                 ),
                 DropdownButton(
                   items: [
@@ -73,28 +78,29 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
             ),
             Expanded(
                 child: SingleChildScrollView(
-              child: ColoredBox(
-                color: Colors.grey.withAlpha(50),
-                child: GridView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  itemCount: 9,
+              child: GridView.builder(
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                itemCount: 9,
 
-                  // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  //   crossAxisCount: 3,
-                  //   crossAxisSpacing: 10,
-                  //   mainAxisSpacing: 5,
-                  //   childAspectRatio: 0.9,
-                  // ),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 5,
-                    crossAxisSpacing: context.w * 0.05,
-                    mainAxisSpacing: 30,
-                    childAspectRatio: 0.9,
-                  ),
-                  itemBuilder: (context, index) {
-                    return Card(
+                // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                //   crossAxisCount: 3,
+                //   crossAxisSpacing: 10,
+                //   mainAxisSpacing: 5,
+                //   childAspectRatio: 0.9,
+                // ),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 5,
+                  crossAxisSpacing: context.w * 0.05,
+                  mainAxisSpacing: 30,
+                  childAspectRatio: 0.9,
+                ),
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      context.router.push(ProjectDetailRoute(projectId: ""));
+                    },
+                    child: Card(
                       color: Colors.white,
                       child: Column(
                         spacing: 10,
@@ -105,9 +111,9 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
                           Text('Team name'),
                         ],
                       ),
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             ))
           ],

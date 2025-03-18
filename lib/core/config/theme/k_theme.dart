@@ -84,7 +84,7 @@ class KTheme extends ChangeNotifier {
   IconThemeData kIconTheme() => IconThemeData(color: ColorPalette.primaryColor);
 
   ThemeData get lightTheme => ThemeData.light().copyWith(
-        scaffoldBackgroundColor: ColorPalette.whiteColor,
+        scaffoldBackgroundColor: ColorPalette.darkenScaffoldColor,
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.deepPurple,
           accentColor: ColorPalette.primaryColor,
@@ -93,6 +93,7 @@ class KTheme extends ChangeNotifier {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: commonButtonStyle,
         ),
+        dividerColor: Colors.grey,
         appBarTheme: appBarTheme,
         textTheme: commonTextTheme(color: ColorPalette.blackColor),
       );

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class LoggingObserver extends ProviderObserver {
@@ -8,7 +9,7 @@ class LoggingObserver extends ProviderObserver {
     Object? newValue,
     ProviderContainer container,
   ) {
-    print('''
+    debugPrint('''
 {
   "provider": "${provider.name ?? provider.runtimeType}",
   "newValue": "$newValue"

@@ -39,6 +39,7 @@ class _ManagerDashboardScreenState extends State<ManagerDashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorPalette.whiteColor,
       appBar: CommonAppbar(
         centerTitle: false,
         elevation: 100,

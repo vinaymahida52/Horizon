@@ -12,7 +12,7 @@ class CommonPadding {
     vertical: verticalCommonPadding,
   );
 
-  static const EdgeInsetsGeometry kCommonPadding = EdgeInsets.symmetric(
+  static EdgeInsetsGeometry kCommonPadding = EdgeInsets.symmetric(
     vertical: verticalCommonPadding,
     horizontal: horizontalCommonPadding,
   );

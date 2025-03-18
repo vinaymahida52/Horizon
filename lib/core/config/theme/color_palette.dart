@@ -17,4 +17,5 @@ class ColorPalette {
   static Color greyColor = Color(0xFF9E9E9E);
   static const Color disabledPrimaryColor = Color(0xFFD1C4E9);
   static const Color disabledSecondaryColor = Color(0xFFCFC0BB);
+  static const Color darkenScaffoldColor = Color(0xFFf5f5f5);
 }

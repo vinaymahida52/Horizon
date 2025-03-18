@@ -49,7 +49,10 @@ dependencies:
   shared_preferences: ^2.5.1
   uuid: ^4.5.1
   mind_map: ^1.0.5
+  graphview: ^1.2.0
   web: ^1.1.1
+  two_dimensional_scrollables: ^0.3.3
+  single_child_two_dimensional_scroll_view: ^0.0.3
 
 dev_dependencies:
   auto_route_generator: ^9.0.0
@@ -65,11 +68,6 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
-  plugin:
-    platforms:
-      web:
-        pluginClass: UrlLauncherPlugin
-        fileName: url_launcher_web.dart
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -80,6 +78,7 @@ flutter:
     - assets/image/png/
     - assets/image/svg/
     - assets/image/jpg/
+    - assets/js/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
