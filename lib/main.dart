@@ -4,10 +4,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:horizon/core/config/router/app_router.dart';
 import 'package:horizon/core/config/theme/k_theme.dart';
+import 'package:horizon/core/observers/riverpod_observer.dart';
 
 void main() {
   setUrlStrategy(PathUrlStrategy());
-  runApp(ProviderScope(child: MyApp()));
+  runApp(ProviderScope(observers: [LoggingObserver()], child: MyApp()));
 }
 
 class MyApp extends ConsumerWidget {
