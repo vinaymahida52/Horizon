@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:horizon/core/config/router/app_router.gr.dart';
 import 'package:horizon/core/extension/context_ext.dart';
+import 'package:horizon/core/interop/js_interop_service.dart';
 import 'package:horizon/core/shared/constraints/common_padding.dart';
 import 'package:horizon/core/shared/widgets/appbar/common_appbar.dart';
 import 'package:horizon/core/shared/widgets/button/common_button.dart';
@@ -47,8 +48,8 @@ class _ProjectListScreenState extends State<ProjectListScreen> {
                   width: context.w * 0.5,
                   child: CommonButton.buildElevatedButton(
                       onPressed: () {
-                        // final interopService = JsInteropService();
-                        // interopService.showAlert('Hello world');
+                        final interopService = JsInteropService();
+                        interopService.showAlert('Hello world');
                       },
                       text: 'Create Project'),
                 ),
