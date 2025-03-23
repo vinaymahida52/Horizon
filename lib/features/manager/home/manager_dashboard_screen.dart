@@ -4,6 +4,7 @@ import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:horizon/core/config/theme/color_palette.dart';
 import 'package:horizon/core/extension/context_ext.dart';
 import 'package:horizon/core/shared/widgets/appbar/common_appbar.dart';
+import 'package:horizon/features/manager/home/children/calendar_view_child.dart';
 import 'package:horizon/features/manager/home/children/dashboard_child.dart';
 import 'package:horizon/features/manager/home/nav_model/nav_mdoel.dart';
 import 'package:horizon/features/manager/home/widget/popup/create_department.dart';
@@ -26,7 +27,7 @@ List<Widget> childrenItems = [
   Center(child: Text('Tasks')),
   Center(child: Text('Inbox')),
   Center(child: Text('Leaderboard')),
-  Center(child: Text('Calendar')),
+  CalendarViewChild(),
 ];
 
 class _ManagerDashboardScreenState extends State<ManagerDashboardScreen> {
@@ -55,48 +56,56 @@ class _ManagerDashboardScreenState extends State<ManagerDashboardScreen> {
           ),
         ],
       ),
-      body: Row(
-        children: [
-          SizedBox(
-            height: context.h,
-            width: 270,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ListView.separated(
-                    separatorBuilder: (context, index) => Divider(
-                          thickness: 1,
-                          height: 1,
-                        ),
-                    itemCount: navItems.length,
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      final nav = navItems[index];
-                      return ListTile(
-                        selected: selectedIndex == index,
-                        selectedTileColor: ColorPalette.disabledSecondaryColor,
-                        selectedColor: ColorPalette.blackColor,
-                        onTap: () {
-                          changeIndex(index);
-                        },
-                        title: Text(nav.title),
-                        leading: Icon(nav.icon),
-                      );
-                    }),
-              ],
+      body: LayoutBuilder(builder: (context, constraints) {
+        //for mobile
+        if (constraints.maxWidth < 600) {
+          return childrenItems[selectedIndex];
+        }
+
+        return Row(
+          children: [
+            SizedBox(
+              height: context.h,
+              width: 270,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ListView.separated(
+                      separatorBuilder: (context, index) => Divider(
+                            thickness: 1,
+                            height: 1,
+                          ),
+                      itemCount: navItems.length,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        final nav = navItems[index];
+                        return ListTile(
+                          selected: selectedIndex == index,
+                          selectedTileColor:
+                              ColorPalette.disabledSecondaryColor,
+                          selectedColor: ColorPalette.blackColor,
+                          onTap: () {
+                            changeIndex(index);
+                          },
+                          title: Text(nav.title),
+                          leading: Icon(nav.icon),
+                        );
+                      }),
+                ],
+              ),
             ),
-          ),
-          VerticalDivider(
-            thickness: 1,
-            width: 3,
-            color: ColorPalette.dividerColor,
-          ),
-          IndexedStack(
-            index: selectedIndex,
-            children: childrenItems,
-          )
-        ],
-      ),
+            VerticalDivider(
+              thickness: 1,
+              width: 3,
+              color: ColorPalette.dividerColor,
+            ),
+            IndexedStack(
+              index: selectedIndex,
+              children: childrenItems,
+            )
+          ],
+        );
+      }),
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: ExpandableFab(
         distance: 65,
@@ -155,6 +164,22 @@ class _ManagerDashboardScreenState extends State<ManagerDashboardScreen> {
           ),
         ],
       ),
+      bottomNavigationBar: LayoutBuilder(builder: (context, constraints) {
+        if (constraints.maxWidth < 600) {
+          return BottomNavigationBar(
+            currentIndex: selectedIndex,
+            onTap: changeIndex,
+            items: navItems
+                .map((e) => BottomNavigationBarItem(
+                      backgroundColor: ColorPalette.primaryColor,
+                      icon: Icon(e.icon),
+                      label: e.title,
+                    ))
+                .toList(),
+          );
+        }
+        return SizedBox();
+      }),
     );
   }
 

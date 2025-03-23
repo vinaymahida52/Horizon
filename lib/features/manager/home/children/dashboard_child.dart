@@ -29,7 +29,7 @@ class _DashboardChildState extends State<DashboardChild> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          Row(
+          Wrap(
             spacing: 20,
             children: [
               DashCard1(

@@ -4,15 +4,15 @@ class CommonPadding {
   static const double verticalCommonPadding = 20.0;
   static const double horizontalCommonPadding = 20.0;
 
-  static const EdgeInsetsGeometry kHorizontalPadding = EdgeInsets.symmetric(
+  static const EdgeInsets kHorizontalPadding = EdgeInsets.symmetric(
     horizontal: horizontalCommonPadding,
   );
 
-  static const EdgeInsetsGeometry kVerticalPadding = EdgeInsets.symmetric(
+  static const EdgeInsets kVerticalPadding = EdgeInsets.symmetric(
     vertical: verticalCommonPadding,
   );
 
-  static EdgeInsetsGeometry kCommonPadding = EdgeInsets.symmetric(
+  static EdgeInsets kCommonPadding = EdgeInsets.symmetric(
     vertical: verticalCommonPadding,
     horizontal: horizontalCommonPadding,
   );

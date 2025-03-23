@@ -6,6 +6,7 @@ import 'package:horizon/core/constants/app_constants.dart';
 final themeProvider = ChangeNotifierProvider<KTheme>((ref) => KTheme());
 
 class KTheme extends ChangeNotifier {
+  static double get titleMediumSize => 20.0;
   static double get largeFontSize => 20.0;
   static double get mediumFontSize => 16.0;
   static double get smallFontSize => 12.0;
@@ -26,11 +27,18 @@ class KTheme extends ChangeNotifier {
   TextStyle get bodySmall =>
       TextStyle(fontSize: smallFontSize, fontFamily: AppConstants.fontFamilty);
 
+  TextStyle get titleMedium => TextStyle(
+        fontSize: titleMediumSize,
+        fontFamily: AppConstants.fontFamilty,
+        fontWeight: FontWeight.bold,
+      );
+
   TextTheme commonTextTheme({Color color = ColorPalette.blackColor}) {
     return TextTheme(
       bodyLarge: bodyLarge,
       bodyMedium: bodyMedium,
       bodySmall: bodySmall,
+      titleMedium: titleMedium,
     );
   }
 

@@ -16,6 +16,8 @@ extension ContextExt on BuildContext {
   TextStyle get bodyMedium => textTheme.bodyMedium!;
   TextStyle get bodySmall => textTheme.bodySmall!;
 
+  TextStyle get titleMedium => textTheme.titleMedium!;
+
   void showSnack(String msg, {Color color = Colors.black}) {
     ScaffoldMessenger.of(this).showSnackBar(SnackBar(
         backgroundColor: color,
