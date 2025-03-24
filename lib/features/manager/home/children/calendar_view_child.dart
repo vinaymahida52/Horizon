@@ -28,7 +28,7 @@ class _CalendarViewChildState extends State<CalendarViewChild> {
       color: Colors.red,
     ),
     CalendarEvent(
-      subject: 'Consulting',
+      subject: 'Consultingx',
       from: DateTime(DateTime.now().year, DateTime.now().month, 8, 9, 0),
       to: DateTime(DateTime.now().year, DateTime.now().month, 8, 12, 0),
       color: Colors.orange,

@@ -6,6 +6,7 @@ import 'package:horizon/core/extension/context_ext.dart';
 import 'package:horizon/core/shared/widgets/appbar/common_appbar.dart';
 import 'package:horizon/features/manager/home/children/calendar_view_child.dart';
 import 'package:horizon/features/manager/home/children/dashboard_child.dart';
+import 'package:horizon/features/manager/home/children/inbox_view_child.dart';
 import 'package:horizon/features/manager/home/nav_model/nav_mdoel.dart';
 import 'package:horizon/features/manager/home/widget/popup/create_department.dart';
 import 'package:horizon/features/manager/home/widget/popup/create_employee.dart';
@@ -25,7 +26,7 @@ int selectedIndex = 0;
 List<Widget> childrenItems = [
   DashboardChild(),
   Center(child: Text('Tasks')),
-  Center(child: Text('Inbox')),
+  InboxViewChild(),
   Center(child: Text('Leaderboard')),
   CalendarViewChild(),
 ];

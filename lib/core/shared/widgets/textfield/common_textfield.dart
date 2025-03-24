@@ -27,6 +27,7 @@ class CommonTextField extends StatelessWidget {
     this.errorWidget,
     this.labelText,
     this.minLines,
+    this.radius,
     this.changeObsecure,
   }) : assert(obscureText != null ? changeObsecure != null : true);
   final String hintText;
@@ -49,6 +50,7 @@ class CommonTextField extends StatelessWidget {
   final bool isLabel;
   int? minLines;
   VoidCallback? changeObsecure;
+  double? radius;
 
   @override
   Widget build(BuildContext context) {
@@ -77,14 +79,14 @@ class CommonTextField extends StatelessWidget {
           color: ColorPalette.greyColor,
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(radius ?? 8),
           borderSide: BorderSide(
             color: ColorPalette.greyColor,
             width: 1,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(radius ?? 8),
           borderSide: BorderSide(
             color: ColorPalette.greyColor,
             width: 1,
