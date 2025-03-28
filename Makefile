@@ -1,6 +1,13 @@
 update_js:
 	cp ./assets/js/main.js ./build/flutter_assets/js/main.js
 
+BASE_HREF = '/Horizon/'  #/Jitendra_kohar/ represent thename of repository
+GITHUB_REPO = git@github.com:vinaymahida52/Horizon.git
+BUILD_VERSION := $(shell grep 'version:' pubspec.yaml | awk '{print $$2}')
+GITHUB_USER = vinaymahida52
+
+
+
 # Deploy the Flutter web project to GitHub
 deploy-web:
 ifndef NAME
@@ -11,7 +18,7 @@ endif
 	flutter pub get
 
 	@echo "Building for web..."
-	flutter build web --base-href "/" --release 
+	flutter build web --base-href $(BASE_HREF) --release
 
 	@echo "Deploying to git repository"
 	cd build/web && \
@@ -25,4 +32,4 @@ endif
 	@echo "✅ Finished deploy: $(GITHUB_REPO)"
 	@echo "🚀 Flutter web URL: https://$(GITHUB_USER).github.io/$(NAME)/"
 
-.PHONY: deploy
+.PHONY: deploy update_js
