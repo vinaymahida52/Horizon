@@ -11,7 +11,7 @@ endif
 	flutter pub get
 
 	@echo "Building for web..."
-	flutter build web --base-href $(thehorrizon.netlify.app) --release 
+	flutter build web --base-href "/" --release 
 
 	@echo "Deploying to git repository"
 	cd build/web && \
