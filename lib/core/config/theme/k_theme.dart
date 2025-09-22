@@ -67,7 +67,7 @@ class KTheme extends ChangeNotifier {
           primarySwatch: Colors.deepPurple,
           accentColor: ColorPalette.primaryColor,
         ),
-        tabBarTheme: kTabBarTheme(),
+        tabBarTheme: kTabBarThemeData(),
         iconTheme: kIconTheme(),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: commonButtonStyle,
@@ -91,13 +91,24 @@ class KTheme extends ChangeNotifier {
 
   IconThemeData kIconTheme() => IconThemeData(color: ColorPalette.primaryColor);
 
+  TabBarThemeData kTabBarThemeData() => TabBarThemeData(
+        dividerColor: ColorPalette.dividerColor,
+        indicator: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: ColorPalette.primaryColor,
+        ),
+        labelColor: ColorPalette.whiteColor,
+        unselectedLabelColor: ColorPalette.blackColor,
+        indicatorSize: TabBarIndicatorSize.tab,
+      );
+
   ThemeData get lightTheme => ThemeData.light().copyWith(
         scaffoldBackgroundColor: ColorPalette.darkenScaffoldColor,
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.deepPurple,
           accentColor: ColorPalette.primaryColor,
         ),
-        tabBarTheme: kTabBarTheme(),
+        tabBarTheme: kTabBarThemeData(),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: commonButtonStyle,
         ),
